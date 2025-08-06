@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package federated;
+
+message ModelWeights {
+  repeated float weights = 1;
+}
+
+service FederatedService {
+  rpc SendWeights(ModelWeights) returns (ModelWeights);
+}
